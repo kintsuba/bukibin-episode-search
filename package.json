@@ -1,0 +1,39 @@
+{
+  "name": "bukibin-episode-search",
+  "description": "Website made by Node.js to search episode of \"Buikyo-binbo-dance\".",
+  "version": "2.8.1",
+  "private": true,
+  "dependencies": {
+    "@nuxtjs/axios": "5.6.0",
+    "@nuxtjs/dotenv": "^1.4.0",
+    "nuxt": "2.8.1",
+    "nuxt-buefy": "^0.3.13",
+    "nuxt-property-decorator": "2.3.0",
+    "ts-node": "8.3.0",
+    "vuex-class": "0.3.2",
+    "vuexfire": "^3.0.0-alpha.18"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore ."
+  },
+  "devDependencies": {
+    "@nuxt/typescript": "2.8.1",
+    "@nuxtjs/eslint-config": "^1.1.2",
+    "@types/node": "10.14.16",
+    "@types/webpack-env": "1.14.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.2.1",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-nuxt": "^0.4.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "prettier": "^1.18.2"
+  }
+}

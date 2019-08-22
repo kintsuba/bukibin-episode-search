@@ -1,0 +1,14 @@
+html {
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "游ゴシック体", YuGothic, "Yu Gothic Medium", sans-serif;
+    font-feature-settings: "pkna" 1;
+}
+
+body {
+    @extend html;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    @extend html;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "游ゴシック体", YuGothic, "Yu Gothic", sans-serif;
+    font-weight: 700;
+}

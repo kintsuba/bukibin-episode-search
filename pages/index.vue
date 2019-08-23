@@ -10,7 +10,9 @@
         <div
           class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop"
         >
-          <p class="bd-notification is-primary"></p>
+          <p id="warning" class="has-text-centered">
+            ※現在第10回までのセリフが登録済みです
+          </p>
           <b-field label="セリフを入力してください" is-large>
             <b-autocomplete
               v-model="input"
@@ -30,7 +32,7 @@
       </div>
       <div id="result" class="columns is-mobile is-centered">
         <div v-if="selected" class="column is-three-quarters">
-          <p id="episode" class="is-size-1 has-text-centered">
+          <p id="episode" class="is-size-2 has-text-centered">
             第{{ appearQuotes[0].episode }}回
           </p>
           <p id="character" class="is-size-3 has-text-centered">
@@ -92,5 +94,8 @@ p#character {
 }
 p#quote {
   margin-top: 20px;
+}
+p#warning {
+  margin-bottom: 10px;
 }
 </style>

@@ -1,15 +1,8 @@
 <template>
   <main>
     <section class="section">
-      <h1 class="title has-text-centered">
-        武器瓶のセリフから第何回か検索するやつ
-      </h1>
-    </section>
-    <section class="section">
       <div class="columns is-mobile is-centered">
-        <div
-          class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop"
-        >
+        <div class="column is-full-mobile is-two-thirds-tablet is-half-desktop">
           <p id="warning" class="has-text-centered">
             ※現在第20回までのセリフが登録済みです
           </p>
@@ -31,7 +24,10 @@
         </div>
       </div>
       <div id="result" class="columns is-mobile is-centered">
-        <div v-if="selected" class="column is-three-quarters">
+        <div
+          v-if="selected"
+          class="column is-full-mobile is-two-thirds-tablet is-half-desktop box"
+        >
           <p id="episode" class="is-size-2 has-text-centered">
             第{{ appearQuotes[0].episode }}回
           </p>
@@ -86,14 +82,15 @@ export default class extends Vue {
 </script>
 
 <style scoped>
-p#episode {
-  margin-top: 10px;
+div#result {
+  margin-top: 30px;
 }
 p#character {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 p#quote {
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 p#warning {
   margin-bottom: 10px;

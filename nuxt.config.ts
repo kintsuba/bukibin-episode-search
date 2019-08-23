@@ -15,37 +15,48 @@ export default {
         content: "武器瓶のセリフが第何回のセリフかを検索するやつです。"
       },
       {
+        hid: "apple-mobile-web-app-title",
         name: "apple-mobile-web-app-title",
         content: "武器瓶のセリフから第何回か検索するやつ"
       },
       {
+        hid: "application-name",
         name: "application-name",
         content: "武器瓶のセリフから第何回か検索するやつ"
       },
       {
+        hid: "msapplication-TileColor",
         name: "msapplication-TileColor",
         content: "#da532c"
       },
       {
+        hid: "theme-color",
         name: "theme-color",
         content: "#ffffff"
       },
-      { property: "og:url", content: "https://bukibin-search.com/" },
-      { property: "og:type", content: "website" },
       {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://bukibin-search.com/"
+      },
+      { hid: "og:type", property: "og:type", content: "website" },
+      {
+        hid: "og:title",
         property: "og:title",
         content: "武器瓶のセリフから第何回か検索するやつ"
       },
       {
+        hid: "og:description",
         property: "og:description",
         content: "武器瓶のセリフが第何回のセリフかを検索するやつです。"
       },
       {
+        hid: "og:site_name",
         property: "og:site_name",
         content: "武器瓶のセリフから第何回か検索するやつ"
       },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@stray7" }
+      { hid: "twitter:card", name: "twitter:card", content: "summary" },
+      { hid: "twitter:site", name: "twitter:site", content: "@stray7" }
     ],
     link: [
       {

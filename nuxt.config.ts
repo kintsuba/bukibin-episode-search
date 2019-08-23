@@ -2,6 +2,7 @@ export default {
   env: {},
   head: {
     htmlAttrs: {
+      lang: "ja",
       prefix:
         "og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/websaite#"
     },

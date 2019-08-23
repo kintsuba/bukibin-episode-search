@@ -4,7 +4,7 @@
       <div class="columns is-mobile is-centered">
         <div class="column is-full-mobile is-two-thirds-tablet is-half-desktop">
           <p id="warning" class="has-text-centered">
-            ※現在第20回までのセリフが登録済みです
+            <small>※現在第20回までのセリフが登録済みです</small>
           </p>
           <b-field label="セリフを入力してください" is-large>
             <b-autocomplete
@@ -31,11 +31,11 @@
           <p id="episode" class="is-size-2 has-text-centered">
             第{{ appearQuotes[0].episode }}回
           </p>
-          <p id="character" class="is-size-3 has-text-centered">
-            {{ appearQuotes[0].character }}
-          </p>
-          <p id="quote" class="is-size-4 has-text-centered">
+          <p id="quote" class="is-size-3 has-text-centered">
             {{ appearQuotes[0].quote }}
+          </p>
+          <p id="character" class="is-size-5 is-pulled-right">
+            （{{ appearQuotes[0].character }}）
           </p>
         </div>
       </div>
@@ -85,12 +85,12 @@ export default class extends Vue {
 div#result {
   margin-top: 30px;
 }
-p#character {
-  margin-top: 20px;
-}
 p#quote {
   margin-top: 20px;
   margin-bottom: 30px;
+}
+p#character {
+  margin-right: 10px;
 }
 p#warning {
   margin-bottom: 10px;

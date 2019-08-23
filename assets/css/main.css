@@ -14,7 +14,7 @@ body {
     height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6, strong {
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, strong {
     @extend html;
     font-family: -apple-system, BlinkMacSystemFont, Roboto, "游ゴシック体", YuGothic, "Yu Gothic", sans-serif;
     font-weight: 700;

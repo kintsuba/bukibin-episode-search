@@ -1,4 +1,4 @@
-html body button, input, select, textarea{
+html, body, button, input, select, textarea{
     font-family: -apple-system, BlinkMacSystemFont, Roboto, "游ゴシック体", YuGothic, "Yu Gothic Medium", sans-serif;
     font-feature-settings: "pkna" 1;
 }

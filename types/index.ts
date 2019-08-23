@@ -1,7 +1,7 @@
 export * from "./state";
 
 export interface Quote {
-  id: string;
+  id: number;
   quote: string;
   character: string;
   episode: number;

@@ -1,7 +1,9 @@
 <template>
   <main class="container">
     <section class="section">
-      <h1 class="title has-text-centered">武器瓶セリフ検索</h1>
+      <h1 class="title has-text-centered">
+        武器瓶のセリフから第何回か検索するやつ
+      </h1>
     </section>
     <section class="section">
       <div class="columns is-mobile is-centered">
@@ -22,13 +24,20 @@
               </template>
             </b-autocomplete>
           </b-field>
-          <p>
-            <small>{{ input }}</small>
-          </p>
         </div>
       </div>
-      <div class="column is-half">
-        <p>{{ seleted }}</p>
+      <div id="result" class="columns is-mobile is-centered">
+        <div v-if="selected" class="column is-three-quarters">
+          <p class="is-size-1 has-text-centered">
+            第{{ appearQuotes[0].episode }}回
+          </p>
+          <p class="is-size-3 has-text-centered">
+            {{ appearQuotes[0].character }}
+          </p>
+          <p class="is-size-4 has-text-centered">
+            {{ appearQuotes[0].quote }}
+          </p>
+        </div>
       </div>
     </section>
   </main>
@@ -50,18 +59,30 @@ import { Quote } from "~/types";
 })
 export default class extends Vue {
   input: string = "";
-  seleted: string = "seleted";
+  selected: Quote | undefined = undefined;
 
   @State quote!: Quote;
 
   public get filteredQuotes(): string[] {
-    return this.$store.getters.getFilteredQuotes(this.input);
+    return this.appearQuotes.map(q => q.quote);
   }
 
-  public get appearQuote(): string {
-    return this.$store.getters.getAppearQuote(this.seleted);
+  public get appearQuotes(): Quote[] {
+    return this.$store.getters.getAppearQuotes(this.input);
+  }
+
+  public get displayResult(): boolean {
+    if (this.appearQuotes) {
+      return this.appearQuotes !== [];
+    } else {
+      return false;
+    }
   }
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+div#result p {
+  margin-top: 30px;
+}
+</style>

@@ -18,7 +18,7 @@ export const getters: GetterTree<RootState, RootState> = {
   getFilteredQuotes: (state: RootState, getters) => (input: string) => {
     return getters.getQuotes.filter((q: string) => q.includes(input));
   },
-  getAppearQuote: (state: RootState) => (input: string) => {
+  getAppearQuotes: (state: RootState) => (input: string) => {
     return state.quotes.filter(q => q.quote.includes(input));
   },
   getAppearEpisode: (state: RootState, getters) => (input: string) => {

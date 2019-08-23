@@ -11,7 +11,7 @@
           class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop"
         >
           <p id="warning" class="has-text-centered">
-            ※現在第10回までのセリフが登録済みです
+            ※現在第20回までのセリフが登録済みです
           </p>
           <b-field label="セリフを入力してください" is-large>
             <b-autocomplete

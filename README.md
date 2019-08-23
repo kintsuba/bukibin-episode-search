@@ -1,6 +1,6 @@
 # bukibin-episode-search
 
-> Website made by Node.js to search episode of \"Buikyo-binbo-dance\".
+> Website made by Nuxt.js to search episode of \"Buikyo-binbo-dance\".
 
 ## Build Setup
 

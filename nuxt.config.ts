@@ -55,6 +55,11 @@ export default {
         property: "og:site_name",
         content: "武器瓶のセリフから第何回か検索するやつ"
       },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "/android-chrome-512x512.png"
+      },
       { hid: "twitter:card", name: "twitter:card", content: "summary" },
       { hid: "twitter:site", name: "twitter:site", content: "@stray7" }
     ],

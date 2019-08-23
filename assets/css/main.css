@@ -9,7 +9,9 @@ body {
     font-feature-settings : “palt”;
     letter-spacing:1px;
     text-align:justify;
-    line-height: 1.75   
+    line-height: 1.75;
+
+    height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6, strong {

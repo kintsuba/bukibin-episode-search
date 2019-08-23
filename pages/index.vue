@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main>
     <section class="section">
       <h1 class="title has-text-centered">
         武器瓶のセリフから第何回か検索するやつ
@@ -87,7 +87,7 @@ export default class extends Vue {
 
 <style scoped>
 p#episode {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 p#character {
   margin-top: 30px;

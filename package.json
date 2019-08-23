@@ -1,6 +1,6 @@
 {
   "name": "bukibin-episode-search",
-  "description": "Website made by Node.js to search episode of \"Buikyo-binbo-dance\".",
+  "description": "Website made by Nuxt.js to search episode of \"Buikyo-binbo-dance\".",
   "version": "2.8.1",
   "private": true,
   "dependencies": {

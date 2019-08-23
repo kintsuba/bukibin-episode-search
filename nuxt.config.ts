@@ -1,6 +1,10 @@
 export default {
   env: {},
   head: {
+    htmlAttrs: {
+      prefix:
+        "og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/websaite#"
+    },
     title: "武器瓶のセリフから第何回か検索するやつ",
     meta: [
       { charset: "utf-8" },
@@ -8,7 +12,7 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: '武器瓶のセリフが第何回のセリフかを検索するやつです。".'
+        content: "武器瓶のセリフが第何回のセリフかを検索するやつです。"
       },
       {
         name: "apple-mobile-web-app-title",
@@ -25,7 +29,23 @@ export default {
       {
         name: "theme-color",
         content: "#ffffff"
-      }
+      },
+      { property: "og:url", content: "https://bukibin-search.com/" },
+      { property: "og:type", content: "website" },
+      {
+        property: "og:title",
+        content: "武器瓶のセリフから第何回か検索するやつ"
+      },
+      {
+        property: "og:description",
+        content: "武器瓶のセリフが第何回のセリフかを検索するやつです。"
+      },
+      {
+        property: "og:site_name",
+        content: "武器瓶のセリフから第何回か検索するやつ"
+      },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@stray7" }
     ],
     link: [
       {

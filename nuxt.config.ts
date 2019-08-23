@@ -3,8 +3,7 @@ export default {
   head: {
     htmlAttrs: {
       lang: "ja",
-      prefix:
-        "og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/websaite#"
+      prefix: "og: http://ogp.me/ns# website: http://ogp.me/ns/website#"
     },
     title: "武器瓶のセリフから第何回か検索するやつ",
     meta: [

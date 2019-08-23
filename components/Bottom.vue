@@ -3,7 +3,7 @@
     <div class="container">
       <div class="content has-text-centered">
         <p>
-          <small>&copy; 2019 Kintsuba</small>
+          <small>&copy; 2019 きんつば</small>
         </p>
         <p>
           <small

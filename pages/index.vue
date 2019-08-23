@@ -7,7 +7,9 @@
     </section>
     <section class="section">
       <div class="columns is-mobile is-centered">
-        <div class="column is-half">
+        <div
+          class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop"
+        >
           <p class="bd-notification is-primary"></p>
           <b-field label="セリフを入力してください" is-large>
             <b-autocomplete
@@ -15,7 +17,7 @@
               rounded
               size="is-large"
               :data="filteredQuotes"
-              placeholder="例: 『間違って2って書いた後横着して直した3』"
+              placeholder="例: 「間違って2って書いた後横着して直した3」"
               icon="magnify"
               @select="option => (selected = option)"
             >
@@ -28,13 +30,13 @@
       </div>
       <div id="result" class="columns is-mobile is-centered">
         <div v-if="selected" class="column is-three-quarters">
-          <p class="is-size-1 has-text-centered">
+          <p id="episode" class="is-size-1 has-text-centered">
             第{{ appearQuotes[0].episode }}回
           </p>
-          <p class="is-size-3 has-text-centered">
+          <p id="character" class="is-size-3 has-text-centered">
             {{ appearQuotes[0].character }}
           </p>
-          <p class="is-size-4 has-text-centered">
+          <p id="quote" class="is-size-4 has-text-centered">
             {{ appearQuotes[0].quote }}
           </p>
         </div>
@@ -82,7 +84,13 @@ export default class extends Vue {
 </script>
 
 <style scoped>
-div#result p {
+p#episode {
   margin-top: 30px;
+}
+p#character {
+  margin-top: 30px;
+}
+p#quote {
+  margin-top: 20px;
 }
 </style>

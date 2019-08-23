@@ -1,19 +1,52 @@
 export default {
   env: {},
   head: {
-    title: "bukibin-episode-search",
+    title: "武器瓶のセリフから第何回か検索するやつ",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content:
-          'Website made by Node.js to search episode of "Buikyo-binbo-dance".'
+        content: '武器瓶のセリフが第何回のセリフかを検索するやつです。".'
+      },
+      {
+        name: "apple-mobile-web-app-title",
+        content: "武器瓶のセリフから第何回か検索するやつ"
+      },
+      {
+        name: "application-name",
+        content: "武器瓶のセリフから第何回か検索するやつ"
+      },
+      {
+        name: "msapplication-TileColor",
+        content: "#da532c"
+      },
+      {
+        name: "theme-color",
+        content: "#ffffff"
       }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "apple-touch-icon",
+        size: "180x180",
+        href: "/apple-touch-icon.png"
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        size: "32x32",
+        href: "/favicon-32x32.png"
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        size: "16x16",
+        href: "/favicon-16x16.png"
+      },
+      { rel: "manifest", href: "/site.webmanifest" },
+      { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#5bbad5" },
       {
         rel: "stylesheet",
         href:
@@ -32,6 +65,6 @@ export default {
   loading: { color: "#3B8070" },
   css: ["~/assets/css/main.css"],
   build: {},
-  modules: ["@nuxtjs/axios", "nuxt-buefy", "@nuxtjs/dotenv"],
+  modules: ["@nuxtjs/axios", "nuxt-buefy", "@nuxtjs/pwa"],
   axios: {}
 };

@@ -28,22 +28,18 @@ import { Quote } from "~/types";
 export default class extends Vue {
   columns = [
     {
-      field: "id",
-      label: "ID",
-      width: "40",
-      numeric: true
-    },
-    {
       field: "quote",
       label: "セリフ"
     },
     {
       field: "character",
-      label: "キャラ"
+      label: "キャラ",
+      width: "95"
     },
     {
       field: "episode",
       label: "話数",
+      width: "50",
       numeric: true
     }
   ];

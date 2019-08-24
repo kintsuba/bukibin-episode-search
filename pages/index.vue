@@ -100,7 +100,7 @@ export default class extends Vue {
 <style scoped>
 .wf-nicomoji {
   font-family: "Nico Moji", -apple-system, BlinkMacSystemFont, Roboto,
-    "游ゴシック体 ", YuGothic, " Yu Gothic Medium ", sans-serif;
+    "游ゴシック体", YuGothic, " Yu Gothic Medium ", sans-serif;
 }
 div#result {
   margin-top: 30px;

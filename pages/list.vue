@@ -1,6 +1,6 @@
 <template>
   <main class="container">
-    <section class="section"><h1 class="title">セリフリスト</h1></section>
+    <section class="section"><h2 class="title">セリフリスト</h2></section>
     <b-table
       :data="quotes"
       :columns="columns"

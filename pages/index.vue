@@ -31,7 +31,11 @@
           <p id="episode" class="is-size-2 has-text-centered">
             第{{ appearQuotes[0].episode }}回
           </p>
-          <p id="quote" class="is-size-3 has-text-centered">
+          <p
+            id="quote"
+            class="is-size-3 has-text-centered"
+            :class="{ 'wf-nicomoji': isWagomu }"
+          >
             {{ appearQuotes[0].quote }}
           </p>
           <p id="character" class="is-size-5 is-pulled-right">
@@ -78,10 +82,26 @@ export default class extends Vue {
       return false;
     }
   }
+
+  public get isWagomu(): boolean {
+    if (
+      this.appearQuotes[0].quote === "ベンッ" ||
+      this.appearQuotes[0].quote === "ベベベンッ" ||
+      this.appearQuotes[0].quote === "♪べべべベーン べ べ べ ベーン"
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 </script>
 
 <style scoped>
+.wf-nicomoji {
+  font-family: "Nico Moji", -apple-system, BlinkMacSystemFont, Roboto,
+    "游ゴシック体 ", YuGothic, " Yu Gothic Medium ", sans-serif;
+}
 div#result {
   margin-top: 30px;
 }

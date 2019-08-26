@@ -4,7 +4,7 @@
       <div class="columns is-mobile is-centered">
         <div class="column is-full-mobile is-two-thirds-tablet is-half-desktop">
           <p id="warning" class="has-text-centered">
-            <small>※現在第60回までのセリフが登録済みです</small>
+            <small>※現在第80回までのセリフが登録済みです</small>
           </p>
           <b-field label="セリフを入力してください" is-large>
             <b-autocomplete

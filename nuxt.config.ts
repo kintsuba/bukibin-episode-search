@@ -109,6 +109,6 @@ export default {
   axios: {},
   sitemap: {
     path: "/sitemap.xml",
-    hostname: "https://example.com"
+    hostname: "https://bukibin-search.com"
   }
 };

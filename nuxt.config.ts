@@ -105,6 +105,10 @@ export default {
   loading: { color: "#3B8070" },
   css: ["~/assets/css/main.css"],
   build: {},
-  modules: ["@nuxtjs/axios", "nuxt-buefy", "@nuxtjs/pwa"],
-  axios: {}
+  modules: ["@nuxtjs/axios", "nuxt-buefy", "@nuxtjs/pwa", "@nuxtjs/sitemap"],
+  axios: {},
+  sitemap: {
+    path: "/sitemap.xml",
+    hostname: "https://example.com"
+  }
 };

@@ -23,7 +23,7 @@
 
       <div id="result" class="columns is-mobile is-centered">
         <div
-          class="column is-full-mobile is-four-fifths-tablet is-half-desktop"
+          class="column is-full-mobile is-four-fifths-tablet is-three-fifths-desktop is-half-fullhd"
         >
           <transition name="fade-fast" mode="out-in">
             <article v-if="!selected" class="message is-info">
@@ -59,7 +59,6 @@
                     :columns="columns"
                     narrowed
                     hoverable
-                    mobile-cards="false"
                   ></b-table>
                 </div>
               </b-collapse>
@@ -84,7 +83,7 @@
                       icon="angle-up"
                       size="is-small"
                     ></b-icon>
-                    この回の台詞一覧
+                    この回の台詞一覧を見る
                   </span>
                 </p>
               </footer>

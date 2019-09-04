@@ -28,7 +28,7 @@
           <transition name="fade-fast" mode="out-in">
             <article v-if="!selected" class="message is-info">
               <div class="message-body">
-                <p>現在第140回までのセリフが登録済みです</p>
+                <p>現在第142回までのセリフが登録済みです</p>
               </div>
             </article>
             <div v-else class="card">

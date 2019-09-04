@@ -26,6 +26,9 @@ export const getters: GetterTree<RootState, RootState> = {
   },
   getAppearCharacter: (state: RootState, getters) => (input: string) => {
     return getters.getAppearQuotes(input).character;
+  },
+  getQuotesFromEppisode: (state: RootState) => (input: number) => {
+    return state.quotes.filter(q => q.episode === input);
   }
 };
 

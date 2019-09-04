@@ -3,9 +3,6 @@
     <section class="section">
       <div class="columns is-mobile is-centered">
         <div class="column is-full-mobile is-two-thirds-tablet is-half-desktop">
-          <p id="warning" class="has-text-centered">
-            <small>※現在第140回までのセリフが登録済みです</small>
-          </p>
           <b-field label="セリフを入力してください" is-large>
             <b-autocomplete
               v-model="input"
@@ -23,24 +20,73 @@
           </b-field>
         </div>
       </div>
+
       <div id="result" class="columns is-mobile is-centered">
-        <div
-          v-if="selected"
-          class="column is-full-mobile is-two-thirds-tablet is-half-desktop box"
-        >
-          <p id="episode" class="is-size-2 has-text-centered">
-            第{{ appearQuotes[0].episode }}回
-          </p>
-          <p
-            id="quote"
-            class="is-size-3 has-text-centered"
-            :class="{ 'wf-nicomoji': isWagomu }"
-          >
-            {{ appearQuotes[0].quote }}
-          </p>
-          <p id="character" class="is-size-5 is-pulled-right">
-            （{{ appearQuotes[0].character }}）
-          </p>
+        <div class="column is-full-mobile is-two-thirds-tablet is-half-desktop">
+          <transition name="fade-fast" mode="out-in">
+            <article v-if="!selected" class="message is-info">
+              <div class="message-body">
+                <p>現在第140回までのセリフが登録済みです</p>
+              </div>
+            </article>
+            <div v-else class="card">
+              <div class="card-content">
+                <p id="episode" class="is-size-2 has-text-centered">
+                  第{{ appearQuotes[0].episode }}回
+                </p>
+                <p
+                  id="quote"
+                  class="is-size-3 has-text-centered"
+                  :class="{ 'wf-nicomoji': isWagomu }"
+                >
+                  <span v-html="quoteForDisplay"></span>
+                </p>
+                <p id="character" class="is-size-5 has-text-right">
+                  （{{ appearQuotes[0].character }}）
+                </p>
+              </div>
+              <b-collapse
+                :open.sync="isOpen"
+                animation="slide-fade"
+                aria-id="relatedQuoteList"
+              >
+                <div class="card-content">
+                  <b-table
+                    :data="getCurrentEpisodeQuotes"
+                    :columns="columns"
+                    narrowed
+                    hoverable
+                    mobile-cards="false"
+                  ></b-table>
+                </div>
+              </b-collapse>
+              <footer class="card-footer">
+                <p class="card-footer-item">
+                  <span
+                    id="related-button"
+                    class="cs-pointer"
+                    aria-controls="relatedQuoteList"
+                    role="button"
+                    @click="isOpen = !isOpen"
+                  >
+                    <b-icon
+                      v-if="!isOpen"
+                      pack="fas"
+                      icon="angle-down"
+                      size="is-small"
+                    ></b-icon>
+                    <b-icon
+                      v-if="isOpen"
+                      pack="fas"
+                      icon="angle-up"
+                      size="is-small"
+                    ></b-icon>
+                    この回の台詞一覧
+                  </span>
+                </p>
+              </footer>
+            </div>
+          </transition>
         </div>
       </div>
     </section>
@@ -64,6 +110,19 @@ import { Quote } from "~/types";
 export default class extends Vue {
   input: string = "";
   selected: Quote | undefined = undefined;
+  isOpen: boolean = false;
+
+  columns = [
+    {
+      field: "quote",
+      label: "セリフ"
+    },
+    {
+      field: "character",
+      label: "キャラ",
+      width: "95"
+    }
+  ];
 
   @State quote!: Quote;
 
@@ -73,6 +132,19 @@ export default class extends Vue {
 
   public get appearQuotes(): Quote[] {
     return this.$store.getters.getAppearQuotes(this.input);
+  }
+
+  public get getCurrentEpisodeQuotes(): Quote[] {
+    return this.$store.getters.getQuotesFromEppisode(
+      this.appearQuotes[0].episode
+    );
+  }
+
+  public get quoteForDisplay(): string {
+    const quote = this.appearQuotes[0].quote;
+    if (quote === "ベートーベンッ") {
+      return quote.replace(/ベンッ/, '<span class="wf-nicomoji">ベンッ</span>');
+    } else return quote;
   }
 
   public get displayResult(): boolean {
@@ -98,10 +170,6 @@ export default class extends Vue {
 </script>
 
 <style scoped>
-.wf-nicomoji {
-  font-family: "Nico Moji", -apple-system, BlinkMacSystemFont, Roboto,
-    "游ゴシック体", YuGothic, " Yu Gothic Medium ", sans-serif;
-}
 div#result {
   margin-top: 30px;
 }
@@ -114,5 +182,8 @@ p#character {
 }
 p#warning {
   margin-bottom: 10px;
+}
+span#related-button {
+  padding: 3px;
 }
 </style>

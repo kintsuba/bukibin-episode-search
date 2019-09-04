@@ -6,7 +6,9 @@ html, body, button, input, select, textarea{
 body {
     @extend html;
 
-    font-feature-settings : “palt”;
+    -moz-font-feature-settings: "palt";
+    -webkit-font-feature-settings: "palt";
+    font-feature-settings: "palt";
     letter-spacing:1px;
     text-align:justify;
     line-height: 1.75;
@@ -18,4 +20,36 @@ h1, h2, h3, h4, h5, h6, strong {
     @extend html;
     font-family: -apple-system, BlinkMacSystemFont, Roboto, "游ゴシック体", YuGothic, "Yu Gothic", sans-serif;
     font-weight: 700;
+}
+
+.wf-nicomoji {
+    font-family: "Nico Moji", -apple-system, BlinkMacSystemFont, Roboto,
+      "游ゴシック体", YuGothic, " Yu Gothic Medium ", sans-serif;
+    vertical-align: top
+}
+
+.cs-pointer {
+    cursor: pointer;
+}
+
+.slide-fade-enter-active {
+    transition: all .2s ease;
+}
+.slide-fade-leave-active {
+    transition: all .05s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+.fade-fast-enter-active,
+.fade-fast-leave-active {
+  transition: opacity 100ms ease-out;
+}
+
+.fade-fast-enter,
+.fade-fast-leave-to {
+  opacity: 0;
 }

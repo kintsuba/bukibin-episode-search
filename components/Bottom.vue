@@ -1,19 +1,53 @@
 <template>
   <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <p>
-          <small>&copy; 2019 きんつば</small>
-        </p>
-        <p>
-          <small>
-            朝の朝礼(121回)から遊びマスタークイーン(140回)まで登録しました。手伝ってくださった方ありがとうございました。
-          </small>
-        </p>
-      </div>
+    <div class="content has-text-centered">
+      <p class="has-text-centered">
+        <small>&copy; 2019 きんつば</small>
+      </p>
+
+      <b-button
+        size="is-small"
+        icon-pack="fab"
+        icon-left="twitter"
+        type="is-primary"
+        outlined
+        rounded
+        tag="a"
+        href="https://twitter.com/stray7"
+      >
+        stray7
+      </b-button>
+
+      <b-button
+        size="is-small"
+        icon-pack="fab"
+        icon-left="github"
+        type="is-primary"
+        outlined
+        rounded
+        tag="a"
+        href="https://github.com/kintsuba/"
+      >
+        Kintsuba
+      </b-button>
+      <b-button
+        size="is-small"
+        icon-pack="fab"
+        icon-left="steam"
+        type="is-primary"
+        outlined
+        rounded
+        tag="a"
+        href="https://steamcommunity.com/id/kintsuba/"
+      >
+        Kintsuba
+      </b-button>
     </div>
   </footer>
 </template>
+
+<style scoped></style>
+
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
 

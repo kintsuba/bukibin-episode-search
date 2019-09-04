@@ -22,7 +22,9 @@
       </div>
 
       <div id="result" class="columns is-mobile is-centered">
-        <div class="column is-full-mobile is-two-thirds-tablet is-half-desktop">
+        <div
+          class="column is-full-mobile is-four-fifths-tablet is-half-desktop"
+        >
           <transition name="fade-fast" mode="out-in">
             <article v-if="!selected" class="message is-info">
               <div class="message-body">
@@ -50,6 +52,7 @@
                 animation="slide-fade"
                 aria-id="relatedQuoteList"
               >
+                <hr class="card-border" />
                 <div class="card-content">
                   <b-table
                     :data="getCurrentEpisodeQuotes"
@@ -185,5 +188,10 @@ p#warning {
 }
 span#related-button {
   padding: 3px;
+}
+hr.card-border {
+  border-top: 1px solid #dbdbdb;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 </style>

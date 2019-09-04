@@ -60,7 +60,7 @@ export default {
       {
         hid: "og:image",
         property: "og:image",
-        content: "/android-chrome-512x512.png"
+        content: "https://bukibin-search.com/android-chrome-512x512.png"
       },
       { hid: "twitter:card", name: "twitter:card", content: "summary" },
       { hid: "twitter:site", name: "twitter:site", content: "@stray7" }

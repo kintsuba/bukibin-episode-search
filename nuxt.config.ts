@@ -12,7 +12,8 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "武器瓶のセリフが第何回のセリフかを検索するやつです。"
+        content:
+          "不器用ビンボーダンス（武器瓶）のセリフが第何回のセリフかを検索できる非公式のファンサイトです。"
       },
       {
         hid: "apple-mobile-web-app-title",
@@ -48,7 +49,8 @@ export default {
       {
         hid: "og:description",
         property: "og:description",
-        content: "武器瓶のセリフが第何回のセリフかを検索するやつです。"
+        content:
+          "不器用ビンボーダンス（武器瓶）のセリフが第何回のセリフかを検索できる非公式のファンサイトです。セリフ一覧もあります。"
       },
       {
         hid: "og:site_name",

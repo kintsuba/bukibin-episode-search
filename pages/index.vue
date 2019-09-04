@@ -57,7 +57,6 @@
                 <b-table
                   :data="getCurrentEpisodeQuotes"
                   :columns="columns"
-                  narrowed
                   hoverable
                   striped
                 ></b-table>
@@ -122,7 +121,7 @@ export default class extends Vue {
     {
       field: "character",
       label: "キャラ",
-      width: "95"
+      width: "105"
     }
   ];
 

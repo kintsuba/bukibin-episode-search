@@ -30,7 +30,7 @@ import { Quote } from "~/types";
   }
 })
 export default class extends Vue {
-  isColored: boolean = true;
+  isColored: boolean = false;
 
   columns = [
     {

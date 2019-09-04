@@ -32,6 +32,13 @@ h1, h2, h3, h4, h5, h6, strong {
     cursor: pointer;
 }
 
+.no-border {
+    border: none;
+}
+.no-border td {
+    border: none;
+}
+
 .slide-fade-enter-active {
     transition: all .2s ease;
 }
@@ -52,4 +59,53 @@ h1, h2, h3, h4, h5, h6, strong {
 .fade-fast-enter,
 .fade-fast-leave-to {
   opacity: 0;
+}
+
+.chiyori-color{
+    background-color: #e0e0e0;
+}
+.chiyori-lighter-color{
+    background-color: #f5f5f5;
+}
+.yumi-color{
+    background-color: #ffd740;
+}
+.yumi-lighter-color{
+    background-color: #fff8e1;
+}
+.minase-color{
+    background-color: #ff9e80;
+}
+.minase-lighter-color{
+    background-color: #fbe9e7;
+}
+.maya-color{
+    background-color: #e1bee7;
+}
+.maya-lighter-color{
+    background-color: #fff1ff;
+}
+.kushi-color{
+    background-color: #ffe57f;
+}
+.kushi-lighter-color{
+    background-color: #fff3e0;
+}
+.ouka-color{
+    background-color: #ff8a80;
+}
+.ouka-lighter-color{
+    background-color: #ffccbc;
+}
+.multiple-color{
+    background-color: #FFF;
+}
+.multiple-lighter-color{
+    background-color: #FFF;
+}
+.other-color{
+    background-color: #FFF;
+}
+.other-lighter-color{
+    background-color: #FFF;
 }

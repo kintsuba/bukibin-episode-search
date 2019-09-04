@@ -53,14 +53,14 @@
                 aria-id="relatedQuoteList"
               >
                 <hr class="card-border" />
-                <div class="card-content">
-                  <b-table
-                    :data="getCurrentEpisodeQuotes"
-                    :columns="columns"
-                    narrowed
-                    hoverable
-                  ></b-table>
-                </div>
+
+                <b-table
+                  :data="getCurrentEpisodeQuotes"
+                  :columns="columns"
+                  narrowed
+                  hoverable
+                  striped
+                ></b-table>
               </b-collapse>
               <footer class="card-footer">
                 <p class="card-footer-item">
@@ -126,6 +126,28 @@ export default class extends Vue {
     }
   ];
 
+  charaClassMap = new Map([
+    ["御剣ちより", "chiyori-color"],
+    ["栗山弓", "yumi-color"],
+    ["盾木水瀬", "minase-color"],
+    ["色井真夜", "maya-color"],
+    ["栗山籤", "kushi-color"],
+    ["盾木桜華", "ouka-color"],
+    ["複数人", "multiple-color"],
+    ["その他", "other-color"]
+  ]);
+  charaLighterClassMap = new Map([
+    ["キャラ", "yumi-color"],
+    ["御剣ちより", "chiyori-lighter-color"],
+    ["栗山弓", "yumi-lighter-color"],
+    ["盾木水瀬", "minase-lighter-color"],
+    ["色井真夜", "maya-lighter-color"],
+    ["栗山籤", "kushi-lighter-color"],
+    ["盾木桜華", "ouka-lighter-color"],
+    ["複数人", "multiple-lighter-color"],
+    ["その他", "other-lighter-color"]
+  ]);
+
   @State quote!: Quote;
 
   public get filteredQuotes(): string[] {
@@ -167,6 +189,14 @@ export default class extends Vue {
     } else {
       return false;
     }
+  }
+  private charaClass(chara: string): string {
+    const characterClass = this.charaClassMap.get(chara);
+    return characterClass || "";
+  }
+  private charaLighterClass(chara: string): string {
+    const characterClass = this.charaLighterClassMap.get(chara);
+    return characterClass || "";
   }
 }
 </script>

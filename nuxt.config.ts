@@ -106,6 +106,7 @@ export default {
   css: ["~/assets/css/main.css"],
   build: {},
   modules: ["@nuxtjs/axios", "nuxt-buefy", "@nuxtjs/pwa", "@nuxtjs/sitemap"],
+  buildModules: ["@nuxt/typescript-build"],
   axios: {},
   sitemap: {
     path: "/sitemap.xml",

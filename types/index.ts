@@ -5,4 +5,5 @@ export interface Quote {
   quote: string;
   character: string;
   episode: number;
+  twitterId: string;
 }

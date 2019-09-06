@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { MutationTree, GetterTree } from "vuex";
 import { RootState, Quote } from "~/types";
 
@@ -31,16 +32,3 @@ export const getters: GetterTree<RootState, RootState> = {
     return state.quotes.filter(q => q.episode === input);
   }
 };
-
-// export const actions: ActionTree<RootState, RootState> = {
-//   async nuxtServerInit({ commit }, context) {
-//     let people: Person[] = [];
-
-//     // If you serve the site statically with `nuxt generate`, you can't use HTTP requests for local
-//     people = context.isStatic
-//       ? localRandomData
-//       : await context.app.$axios.$get("./random-data.json");
-
-//     commit("setPeople", people.slice(0, 10));
-//   }
-// };

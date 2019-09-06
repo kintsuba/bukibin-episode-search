@@ -28,12 +28,19 @@
           <transition name="fade-fast" mode="out-in">
             <article v-if="!selected" class="message is-info">
               <div class="message-body">
-                <p>現在第142回までのセリフが登録済みです</p>
+                <p>
+                  現在第{{ latestEpisodeNumber }}回までのセリフが登録済みです
+                </p>
               </div>
             </article>
             <div v-else class="card">
               <div class="card-content">
-                <p id="episode" class="is-size-2 has-text-centered">
+                <p
+                  id="episode"
+                  class="is-size-2 has-text-centered"
+                  :class="{ 'cs-pointer': hasTwitterId }"
+                  @click="showTwitter()"
+                >
                   第{{ appearQuotes[0].episode }}回
                 </p>
                 <p
@@ -48,7 +55,7 @@
                 </p>
               </div>
               <b-collapse
-                :open.sync="isOpen"
+                :open.sync="isOpenRelated"
                 animation="slide-fade"
                 aria-id="relatedQuoteList"
               >
@@ -68,16 +75,16 @@
                     class="cs-pointer"
                     aria-controls="relatedQuoteList"
                     role="button"
-                    @click="isOpen = !isOpen"
+                    @click="isOpenRelated = !isOpenRelated"
                   >
                     <b-icon
-                      v-if="!isOpen"
+                      v-if="!isOpenRelated"
                       pack="fas"
                       icon="angle-down"
                       size="is-small"
                     ></b-icon>
                     <b-icon
-                      v-if="isOpen"
+                      v-if="isOpenRelated"
                       pack="fas"
                       icon="angle-up"
                       size="is-small"
@@ -86,6 +93,13 @@
                   </span>
                 </p>
               </footer>
+              <b-modal :active.sync="isOpenModal" :width="600">
+                <tweet
+                  :id="appearQuotes[0].twitterId"
+                  :options="{ lang: 'ja' }"
+                  widget-class="my-twitter-card"
+                ></tweet>
+              </b-modal>
             </div>
           </transition>
         </div>
@@ -95,12 +109,15 @@
 </template>
 
 <script lang="ts">
+import { setTimeout } from "timers";
 import { Component, Vue } from "nuxt-property-decorator";
 import { State } from "vuex-class";
 import { Quote } from "~/types";
 
+const Tweet = require("vue-tweet-embed").Tweet;
+
 @Component({
-  components: {},
+  components: { Tweet },
   async fetch({ $axios, store }) {
     const rawQuotes: Quote[] = await $axios.$get(
       "https://script.google.com/macros/s/AKfycbxfKWk-N1c4657XAp1UjNqLgDtjKqoIn_bhUHuYswk9A7iagXM/exec"
@@ -110,8 +127,9 @@ import { Quote } from "~/types";
 })
 export default class extends Vue {
   input: string = "";
-  selected: Quote | undefined = undefined;
-  isOpen: boolean = false;
+  selected: Quote | null = null;
+  isOpenRelated: boolean = false;
+  isOpenModal: boolean = false;
 
   columns = [
     {
@@ -149,6 +167,10 @@ export default class extends Vue {
 
   @State quote!: Quote;
 
+  public get getQuotes(): Quote[] {
+    return this.$store.state.quotes;
+  }
+
   public get filteredQuotes(): string[] {
     return this.appearQuotes.map(q => q.quote);
   }
@@ -161,6 +183,11 @@ export default class extends Vue {
     return this.$store.getters.getQuotesFromEppisode(
       this.appearQuotes[0].episode
     );
+  }
+
+  public get latestEpisodeNumber(): number {
+    const quotes = this.getQuotes;
+    return quotes[quotes.length - 1].episode;
   }
 
   public get quoteForDisplay(): string {
@@ -189,6 +216,11 @@ export default class extends Vue {
       return false;
     }
   }
+
+  public get hasTwitterId(): boolean {
+    return this.appearQuotes[0].twitterId.length > 1;
+  }
+
   private charaClass(chara: string): string {
     const characterClass = this.charaClassMap.get(chara);
     return characterClass || "";
@@ -196,6 +228,31 @@ export default class extends Vue {
   private charaLighterClass(chara: string): string {
     const characterClass = this.charaLighterClassMap.get(chara);
     return characterClass || "";
+  }
+
+  private showTwitter() {
+    if (!this.hasTwitterId) return;
+
+    this.isOpenModal = !this.isOpenModal;
+
+    const changeHeight = () => {
+      console.log(this.appearQuotes[0].twitterId);
+      const shadowRoot = document.getElementsByTagName("twitter-widget")[0]
+        .shadowRoot;
+      if (shadowRoot) {
+        if (shadowRoot.innerHTML.includes("MediaCard-mediaContainer")) {
+          shadowRoot.innerHTML =
+            shadowRoot.innerHTML +
+            "<style type='text/css'>.MediaCard-mediaContainer{height:50px;}</style>";
+        } else {
+          setTimeout(() => changeHeight(), 100);
+        }
+      } else {
+        setTimeout(() => changeHeight(), 100);
+      }
+    };
+
+    setTimeout(() => changeHeight(), 100);
   }
 }
 </script>
@@ -221,5 +278,9 @@ hr.card-border {
   border-top: 1px solid #dbdbdb;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.my-twitter-card >>> .MediaCard-mediaContainer {
+  height: 50px !important;
 }
 </style>

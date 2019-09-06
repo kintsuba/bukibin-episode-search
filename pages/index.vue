@@ -66,7 +66,7 @@
                   :columns="columns"
                   hoverable
                   striped
-                  mobile-cards="false"
+                  :mobile-cards="hasMobileCards"
                 ></b-table>
               </b-collapse>
               <footer class="card-footer">

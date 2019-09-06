@@ -11,7 +11,6 @@
               :data="filteredQuotes"
               placeholder="例: 「間違って2って書いた後横着して直した3」"
               icon="magnify"
-              :mobile-cards="hasMobileCards"
               @select="option => (selected = option)"
             >
               <template slot="empty"
@@ -67,6 +66,7 @@
                   :columns="columns"
                   hoverable
                   striped
+                  mobile-cards="false"
                 ></b-table>
               </b-collapse>
               <footer class="card-footer">

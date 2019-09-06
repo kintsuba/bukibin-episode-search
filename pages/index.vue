@@ -11,7 +11,7 @@
               :data="filteredQuotes"
               placeholder="例: 「間違って2って書いた後横着して直した3」"
               icon="magnify"
-              mobile-cards="false"
+              :mobile-cards="hasMobileCards"
               @select="option => (selected = option)"
             >
               <template slot="empty"
@@ -131,6 +131,7 @@ export default class extends Vue {
   selected: Quote | null = null;
   isOpenRelated: boolean = false;
   isOpenModal: boolean = false;
+  hasMobileCards: boolean = false;
 
   columns = [
     {

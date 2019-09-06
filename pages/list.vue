@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <section class="section"><h2 class="title">セリフリスト</h2></section>
-    <div class="field has-text-right">
+    <div class="field has-text-right is-hidden-mobile">
       <b-switch v-model="isColored">色を付ける</b-switch>
     </div>
     <b-table

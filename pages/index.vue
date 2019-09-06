@@ -93,7 +93,7 @@
                   </span>
                 </p>
               </footer>
-              <b-modal :active.sync="isOpenModal" :width="600">
+              <b-modal :active.sync="isOpenModal" :width="500">
                 <tweet
                   :id="appearQuotes[0].twitterId"
                   :options="{ lang: 'ja' }"

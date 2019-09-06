@@ -11,6 +11,7 @@
               :data="filteredQuotes"
               placeholder="例: 「間違って2って書いた後横着して直した3」"
               icon="magnify"
+              mobile-cards="false"
               @select="option => (selected = option)"
             >
               <template slot="empty"

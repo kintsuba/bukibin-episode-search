@@ -40,7 +40,7 @@ export default class extends Vue {
     {
       field: "character",
       label: "キャラ",
-      width: "95"
+      width: "110"
     },
     {
       field: "episode",

@@ -141,7 +141,7 @@ export default class extends Vue {
     {
       field: "character",
       label: "キャラ",
-      width: "105"
+      width: "110"
     }
   ];
 

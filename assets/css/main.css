@@ -65,40 +65,52 @@ h1, h2, h3, h4, h5, h6, strong {
 }
 
 .chiyori-color{
-    background-color: #e0e0e0;
+    background-color: #cfcfcf;
 }
 .chiyori-lighter-color{
-    background-color: #f5f5f5;
+    background-color: #e0e0e0;
 }
 .yumi-color{
-    background-color: #ffd740;
+    background-color: #ffee58;
 }
 .yumi-lighter-color{
-    background-color: #fff8e1;
+    background-color: #ffff8b;
 }
 .minase-color{
-    background-color: #ff9e80;
+    background-color: #ff8a65;
 }
 .minase-lighter-color{
-    background-color: #fbe9e7;
+    background-color: #ffbb93;
 }
 .maya-color{
-    background-color: #e1bee7;
+    background-color: #ce93d8;
 }
 .maya-lighter-color{
-    background-color: #fff1ff;
+    background-color: #ffc4ff;
 }
 .kushi-color{
-    background-color: #ffe57f;
+    background-color: #fff9c4;
 }
 .kushi-lighter-color{
-    background-color: #fff3e0;
+    background-color: #fffff7;
 }
 .ouka-color{
-    background-color: #ff8a80;
+    background-color: #ff6e40;
 }
 .ouka-lighter-color{
-    background-color: #ffccbc;
+    background-color: #ffa06d;
+}
+.kaina-color{
+    background-color: #ef9a9a;
+}
+.kaina-lighter-color{
+    background-color: #ffcccb;
+}
+.kuina-color{
+    background-color: #e57373;
+}
+.kuina-lighter-color{
+    background-color: #ffa4a2;
 }
 .multiple-color{
     background-color: #FFF;

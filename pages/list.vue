@@ -57,17 +57,20 @@ export default class extends Vue {
     ["色井真夜", "maya-color"],
     ["栗山籤", "kushi-color"],
     ["盾木桜華", "ouka-color"],
+    ["打田海奈", "kaina-color"],
+    ["打田空射奈", "kuina-color"],
     ["複数人", "multiple-color"],
     ["その他", "other-color"]
   ]);
   charaLighterClassMap = new Map([
-    ["キャラ", "yumi-color"],
     ["御剣ちより", "chiyori-lighter-color"],
     ["栗山弓", "yumi-lighter-color"],
     ["盾木水瀬", "minase-lighter-color"],
     ["色井真夜", "maya-lighter-color"],
     ["栗山籤", "kushi-lighter-color"],
     ["盾木桜華", "ouka-lighter-color"],
+    ["打田海奈", "kaina-lighter-color"],
+    ["打田空射奈", "kuina-lighter-color"],
     ["複数人", "multiple-lighter-color"],
     ["その他", "other-lighter-color"]
   ]);

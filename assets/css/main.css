@@ -48,8 +48,7 @@ h1, h2, h3, h4, h5, h6, strong {
 .slide-fade-leave-active {
     transition: all .05s ease;
 }
-.slide-fade-enter, .slide-fade-leave-to
-    /* .slide-fade-leave-active below version 2.1.8 */ {
+.slide-fade-enter, .slide-fade-leave-to {
     transform: translateY(-10px);
     opacity: 0;
 }

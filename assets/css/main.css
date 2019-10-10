@@ -105,6 +105,12 @@ h1, h2, h3, h4, h5, h6, strong {
 .kuina-color{
     background-color: #e57373;
 }
+.okarina-color{
+    background-color: #ffcdd2;
+}
+.okarina-lighter-color{
+    background-color: #ffffff;
+}
 .kuina-lighter-color{
     background-color: #ffa4a2;
 }

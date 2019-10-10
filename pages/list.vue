@@ -1,17 +1,21 @@
 <template>
-  <main class="container">
-    <section class="section"><h2 class="title">セリフリスト</h2></section>
-    <div class="field has-text-right is-hidden-mobile">
-      <b-switch v-model="isColored">色を付ける</b-switch>
-    </div>
-    <b-table
-      :data="quotes"
-      :columns="columns"
-      narrowed
-      hoverable
-      :striped="!isColored"
-      :row-class="(row, index) => charaClass(row.character)"
-    ></b-table>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="title">セリフリスト</h2>
+        <div class="field has-text-right is-hidden-mobile">
+          <b-switch v-model="isColored">色を付ける</b-switch>
+        </div>
+        <b-table
+          :data="quotes"
+          :columns="columns"
+          narrowed
+          hoverable
+          :striped="!isColored"
+          :row-class="(row, index) => charaClass(row.character)"
+        ></b-table>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -59,6 +63,7 @@ export default class extends Vue {
     ["盾木桜華", "ouka-color"],
     ["打田海奈", "kaina-color"],
     ["打田空射奈", "kuina-color"],
+    ["打田陸利奈", "okarina-color"],
     ["複数人", "multiple-color"],
     ["その他", "other-color"]
   ]);
@@ -71,6 +76,7 @@ export default class extends Vue {
     ["盾木桜華", "ouka-lighter-color"],
     ["打田海奈", "kaina-lighter-color"],
     ["打田空射奈", "kuina-lighter-color"],
+    ["打田陸利奈", "okarina-lighter-color"],
     ["複数人", "multiple-lighter-color"],
     ["その他", "other-lighter-color"]
   ]);

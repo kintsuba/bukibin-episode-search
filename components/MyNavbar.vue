@@ -24,6 +24,15 @@
         ></b-icon>
         &nbsp;&nbsp;List
       </b-navbar-item>
+      <b-navbar-item href="/info">
+        <b-icon
+          pack="fas"
+          icon="info-circle"
+          size="is-small"
+          custom-class="nav-icon"
+        ></b-icon>
+        &nbsp;&nbsp;Info
+      </b-navbar-item>
     </template>
   </b-navbar>
 </template>

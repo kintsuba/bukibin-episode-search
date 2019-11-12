@@ -13,9 +13,9 @@
         outlined
         rounded
         tag="a"
-        href="https://twitter.com/stray7"
+        href="https://twitter.com/awhcs"
       >
-        stray7
+        awhcs
       </b-button>
 
       <b-button

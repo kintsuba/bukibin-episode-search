@@ -3,11 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": [
-      "esnext",
-      "esnext.asynciterable",
-      "dom"
-    ],
+    "lib": ["esnext", "esnext.asynciterable", "dom"],
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "sourceMap": true,
@@ -22,7 +18,8 @@
     "types": [
       "@nuxt/types",
       "@types/node",
-      "@types/webpack-env"
+      "@types/webpack-env",
+      "@nuxtjs/axios"
     ]
   }
 }

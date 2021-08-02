@@ -11,11 +11,9 @@
               :data="filteredQuotes"
               placeholder="例: 「間違って2って書いた後横着して直した3」"
               icon="magnify"
-              @select="option => (selected = option)"
+              @select="(option) => (selected = option)"
             >
-              <template slot="empty"
-                >No results found
-              </template>
+              <template slot="empty">No results found </template>
             </b-autocomplete>
           </b-field>
         </div>
@@ -23,7 +21,14 @@
 
       <div id="result" class="columns is-mobile is-centered">
         <div
-          class="column is-full-mobile is-four-fifths-tablet is-three-fifths-desktop is-three-fifths-widescreen is-half-fullhd"
+          class="
+            column
+            is-full-mobile
+            is-four-fifths-tablet
+            is-three-fifths-desktop
+            is-three-fifths-widescreen
+            is-half-fullhd
+          "
         >
           <transition name="fade-fast" mode="out-in">
             <article v-if="!selected" class="message is-info">
@@ -110,151 +115,158 @@
 </template>
 
 <script lang="ts">
-import { setTimeout } from "timers";
-import { Component, Vue } from "nuxt-property-decorator";
-import { State } from "vuex-class";
-import { Quote } from "~/types";
+import { setTimeout } from 'timers'
+import { Component, Vue } from 'nuxt-property-decorator'
+import { State } from 'vuex-class'
+import { Quote } from '~/types'
 
-const Tweet = require("vue-tweet-embed").Tweet;
+const Tweet = require('vue-tweet-embed').Tweet
+
+Component.registerHooks(['fetch', 'fetchOnServer'])
 
 @Component({
   components: { Tweet },
-  async fetch({ $axios, store }) {
-    const rawQuotes: Quote[] = await $axios.$get(
-      "https://script.google.com/macros/s/AKfycbxfKWk-N1c4657XAp1UjNqLgDtjKqoIn_bhUHuYswk9A7iagXM/exec"
-    );
-    store.commit("setQuotes", rawQuotes);
-  }
 })
 export default class extends Vue {
-  input: string = "";
-  selected: Quote | null = null;
-  isOpenRelated: boolean = false;
-  isOpenModal: boolean = false;
-  hasMobileCards: boolean = false;
+  input: string = ''
+  selected: Quote | null = null
+  isOpenRelated: boolean = false
+  isOpenModal: boolean = false
+  hasMobileCards: boolean = false
 
   columns = [
     {
-      field: "quote",
-      label: "セリフ"
+      field: 'quote',
+      label: 'セリフ',
     },
     {
-      field: "character",
-      label: "キャラ",
-      width: "110"
-    }
-  ];
+      field: 'character',
+      label: 'キャラ',
+      width: '110',
+    },
+  ]
 
   charaClassMap = new Map([
-    ["御剣ちより", "chiyori-color"],
-    ["栗山弓", "yumi-color"],
-    ["盾木水瀬", "minase-color"],
-    ["色井真夜", "maya-color"],
-    ["栗山籤", "kushi-color"],
-    ["盾木桜華", "ouka-color"],
-    ["複数人", "multiple-color"],
-    ["その他", "other-color"]
-  ]);
+    ['御剣ちより', 'chiyori-color'],
+    ['栗山弓', 'yumi-color'],
+    ['盾木水瀬', 'minase-color'],
+    ['色井真夜', 'maya-color'],
+    ['栗山籤', 'kushi-color'],
+    ['盾木桜華', 'ouka-color'],
+    ['複数人', 'multiple-color'],
+    ['その他', 'other-color'],
+  ])
   charaLighterClassMap = new Map([
-    ["キャラ", "yumi-color"],
-    ["御剣ちより", "chiyori-lighter-color"],
-    ["栗山弓", "yumi-lighter-color"],
-    ["盾木水瀬", "minase-lighter-color"],
-    ["色井真夜", "maya-lighter-color"],
-    ["栗山籤", "kushi-lighter-color"],
-    ["盾木桜華", "ouka-lighter-color"],
-    ["複数人", "multiple-lighter-color"],
-    ["その他", "other-lighter-color"]
-  ]);
+    ['キャラ', 'yumi-color'],
+    ['御剣ちより', 'chiyori-lighter-color'],
+    ['栗山弓', 'yumi-lighter-color'],
+    ['盾木水瀬', 'minase-lighter-color'],
+    ['色井真夜', 'maya-lighter-color'],
+    ['栗山籤', 'kushi-lighter-color'],
+    ['盾木桜華', 'ouka-lighter-color'],
+    ['複数人', 'multiple-lighter-color'],
+    ['その他', 'other-lighter-color'],
+  ])
 
-  @State quote!: Quote;
+  @State quote!: Quote
+
+  async fetch({ $axios, store }: any) {
+    const rawQuotes: Quote[] = await $axios.$get(
+      'https://script.google.com/macros/s/AKfycbxfKWk-N1c4657XAp1UjNqLgDtjKqoIn_bhUHuYswk9A7iagXM/exec'
+    )
+    store.commit('setQuotes', rawQuotes)
+  }
+
+  fetchOnServer() {
+    return false
+  }
 
   public get getQuotes(): Quote[] {
-    return this.$store.state.quotes;
+    return this.$store.state.quotes
   }
 
   public get filteredQuotes(): string[] {
-    return this.appearQuotes.map(q => q.quote);
+    return this.appearQuotes.map((q) => q.quote)
   }
 
   public get appearQuotes(): Quote[] {
-    return this.$store.getters.getAppearQuotes(this.input);
+    return this.$store.getters.getAppearQuotes(this.input)
   }
 
   public get getCurrentEpisodeQuotes(): Quote[] {
     return this.$store.getters.getQuotesFromEppisode(
       this.appearQuotes[0].episode
-    );
+    )
   }
 
   public get latestEpisodeNumber(): number {
-    const quotes = this.getQuotes;
-    return quotes[quotes.length - 1].episode;
+    const quotes = this.getQuotes
+    return quotes[quotes.length - 1].episode
   }
 
   public get quoteForDisplay(): string {
-    const quote = this.appearQuotes[0].quote;
-    if (quote === "ベートーベンッ") {
-      return quote.replace(/ベンッ/, '<span class="wf-nicomoji">ベンッ</span>');
-    } else return quote;
+    const quote = this.appearQuotes[0].quote
+    if (quote === 'ベートーベンッ') {
+      return quote.replace(/ベンッ/, '<span class="wf-nicomoji">ベンッ</span>')
+    } else return quote
   }
 
   public get displayResult(): boolean {
     if (this.appearQuotes) {
-      return this.appearQuotes !== [];
+      return this.appearQuotes !== []
     } else {
-      return false;
+      return false
     }
   }
 
   public get isWagomu(): boolean {
     if (
-      this.appearQuotes[0].quote === "ベンッ" ||
-      this.appearQuotes[0].quote === "ベベベンッ" ||
-      this.appearQuotes[0].quote === "♪べべべベーン べ べ べ ベーン"
+      this.appearQuotes[0].quote === 'ベンッ' ||
+      this.appearQuotes[0].quote === 'ベベベンッ' ||
+      this.appearQuotes[0].quote === '♪べべべベーン べ べ べ ベーン'
     ) {
-      return true;
+      return true
     } else {
-      return false;
+      return false
     }
   }
 
   public get hasTwitterId(): boolean {
-    return this.appearQuotes[0].twitterId.length > 1;
+    return this.appearQuotes[0].twitterId.length > 1
   }
 
   private charaClass(chara: string): string {
-    const characterClass = this.charaClassMap.get(chara);
-    return characterClass || "";
+    const characterClass = this.charaClassMap.get(chara)
+    return characterClass || ''
   }
   private charaLighterClass(chara: string): string {
-    const characterClass = this.charaLighterClassMap.get(chara);
-    return characterClass || "";
+    const characterClass = this.charaLighterClassMap.get(chara)
+    return characterClass || ''
   }
 
   private showTwitter() {
-    if (!this.hasTwitterId) return;
+    if (!this.hasTwitterId) return
 
-    this.isOpenModal = !this.isOpenModal;
+    this.isOpenModal = !this.isOpenModal
 
     const changeHeight = () => {
-      console.log(this.appearQuotes[0].twitterId);
-      const shadowRoot = document.getElementsByTagName("twitter-widget")[0]
-        .shadowRoot;
+      console.log(this.appearQuotes[0].twitterId)
+      const shadowRoot =
+        document.getElementsByTagName('twitter-widget')[0].shadowRoot
       if (shadowRoot) {
-        if (shadowRoot.innerHTML.includes("MediaCard-mediaContainer")) {
+        if (shadowRoot.innerHTML.includes('MediaCard-mediaContainer')) {
           shadowRoot.innerHTML =
             shadowRoot.innerHTML +
-            "<style type='text/css'>.MediaCard-mediaContainer{height:50px;}</style>";
+            "<style type='text/css'>.MediaCard-mediaContainer{height:50px;}</style>"
         } else {
-          setTimeout(() => changeHeight(), 100);
+          setTimeout(() => changeHeight(), 100)
         }
       } else {
-        setTimeout(() => changeHeight(), 100);
+        setTimeout(() => changeHeight(), 100)
       }
-    };
+    }
 
-    setTimeout(() => changeHeight(), 100);
+    setTimeout(() => changeHeight(), 100)
   }
 }
 </script>

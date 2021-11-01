@@ -26,19 +26,19 @@
   "devDependencies": {
     "@nuxt/types": "^2.15.7",
     "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/eslint-config": "^6.0.1",
+    "@nuxtjs/eslint-config": "^7.0.0",
     "@nuxtjs/sitemap": "^2.4.0",
-    "@types/node": "^10.14.16",
-    "@types/webpack-env": "1.16.2",
-    "@typescript-eslint/eslint-plugin": "^4.28.5",
-    "@typescript-eslint/parser": "^4.28.5",
+    "@types/node": "^16.11.6",
+    "@types/webpack-env": "1.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
     "babel-eslint": "^10.0.2",
-    "eslint": "^7.32.0",
+    "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-vue": "^7.15.0",
+    "eslint-plugin-nuxt": "^3.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
     "prettier": "^2.3.2"
   }
 }

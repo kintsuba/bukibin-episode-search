@@ -1,5 +1,6 @@
 export default {
   target: 'static',
+  ssr: true,
   env: {},
   telemetry: true,
 

@@ -1,6 +1,8 @@
 export default {
   target: 'static',
   env: {},
+  telemetry: true,
+
   head: {
     htmlAttrs: {
       lang: 'ja',
@@ -113,5 +115,10 @@ export default {
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://bukibin-search.com',
+  },
+  pwa: {
+    manifest: {
+      lang: 'ja',
+    },
   },
 }

@@ -1,4 +1,6 @@
-export default {
+import { NuxtConfig } from '@nuxt/types'
+
+const config: NuxtConfig = {
   target: 'static',
   ssr: true,
   env: {},
@@ -123,3 +125,5 @@ export default {
     },
   },
 }
+
+export default config

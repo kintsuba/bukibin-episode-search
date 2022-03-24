@@ -4,7 +4,6 @@
   "version": "2.8.2",
   "private": true,
   "dependencies": {
-    "@nuxt/typescript-runtime": "^2.1.0",
     "@nuxtjs/axios": "^5.6.0",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
@@ -17,10 +16,10 @@
     "vuexfire": "^3.0.0-alpha.18"
   },
   "scripts": {
-    "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
-    "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.7",

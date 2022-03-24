@@ -5727,7 +5727,7 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
 
-nuxt-buefy@^0.4.8:
+nuxt-buefy@^0.4.21:
   version "0.4.21"
   resolved "https://registry.yarnpkg.com/nuxt-buefy/-/nuxt-buefy-0.4.21.tgz#10b7c6be68bb83a4894458dde30887aa3d2c52d5"
   integrity sha512-utUqw6IYqpaEhm5V9Cm2RukcAQlkBvXcZVr1V4KSubSabc4NAx2Geec101fHhOoYkG3ZN4T4BytzXUYZbR/2Hg==
@@ -5744,7 +5744,7 @@ nuxt-property-decorator@^2.3.0:
     vuex-class "^0.3.2"
     vuex-module-decorators "^1.0.1"
 
-nuxt@^2.11.0:
+nuxt@^2.15.8:
   version "2.15.8"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.15.8.tgz#946cba46bdaaf0e3918aa27fd9ea0fed8ed303b0"
   integrity sha512-ceK3qLg/Baj7J8mK9bIxqw9AavrF+LXqwYEreBdY/a4Sj8YV4mIvhqea/6E7VTCNNGvKT2sJ/TTJjtfQ597lTA==
@@ -8391,7 +8391,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue-tweet-embed@^2.3.0:
+vue-tweet-embed@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/vue-tweet-embed/-/vue-tweet-embed-2.4.0.tgz#8707efd49b519fd2201200ea1ba68881c35d886d"
   integrity sha512-bjViatv0priR1dTEPJpRyWigWGUTUC28VT/sWTaZE+RBWuj/XZvOU5Hzk+O8Mue2dBCAHJrRpoO1VKlcgmHohg==

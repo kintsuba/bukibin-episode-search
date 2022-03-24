@@ -10,12 +10,10 @@
           >）作の『不器用ビンボーダンス』というマンガの登場人物のセリフが、第何回のものかを検索するために作ったファンサイトです。
         </p>
         <h3 class="question">『不器用ビンボーダンス』について</h3>
-        <p class="answer">
-          以下から読めるので読んで。
-        </p>
+        <p class="answer">以下から読めるので読んで。</p>
         <ul class="bukibin">
           <li>
-            ニコニコ静画版（サイドストーリーが読める）：<br />
+            ニコニコ静画版（サイドストーリーも読める）：<br />
             <span class="bukibin-url"
               ><a href="https://seiga.nicovideo.jp/comic/41035"
                 >https://seiga.nicovideo.jp/comic/41035</a
@@ -23,7 +21,8 @@
             </span>
           </li>
           <li>
-            Twitter モーメント版（最新話まで読める）：
+            Twitter モーメント版（<s>最新話まで読める</s>
+            更新されなくなったから↑を読もう）：
             <ul>
               <li class="bukibin-url">
                 <a href="https://twitter.com/i/moments/1119197021879934977"

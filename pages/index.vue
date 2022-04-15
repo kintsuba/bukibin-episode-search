@@ -21,14 +21,7 @@
 
       <div id="result" class="columns is-mobile is-centered">
         <div
-          class="
-            column
-            is-full-mobile
-            is-four-fifths-tablet
-            is-three-fifths-desktop
-            is-three-fifths-widescreen
-            is-half-fullhd
-          "
+          class="column is-full-mobile is-four-fifths-tablet is-three-fifths-desktop is-three-fifths-widescreen is-half-fullhd"
         >
           <transition name="fade-fast" mode="out-in">
             <article v-if="!selected" class="message is-info">

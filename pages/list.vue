@@ -26,12 +26,6 @@ import { Quote } from '~/types'
 
 @Component({
   components: {},
-  async fetch({ $axios, store }) {
-    const rawQuotes: Quote[] = await $axios.$get(
-      "https://script.google.com/macros/s/AKfycbxfKWk-N1c4657XAp1UjNqLgDtjKqoIn_bhUHuYswk9A7iagXM/exec"
-    );
-    store.commit("setQuotes", rawQuotes);
-  }
 })
 export default class extends Vue {
   isColored: boolean = false
@@ -83,10 +77,12 @@ export default class extends Vue {
 
   @State quote!: Quote
 
-  @State quote!: Quote;
+  async asyncData({ $axios, store }: any) {
+    const quotes: Quote[] = await $axios.$get(
+      'https://script.google.com/macros/s/AKfycbxfKWk-N1c4657XAp1UjNqLgDtjKqoIn_bhUHuYswk9A7iagXM/exec'
+    )
 
-  public get quotes(): Quote[] {
-    return this.$store.state.quotes;
+    return { quotes }
   }
 
   private charaClass(chara: string): string {

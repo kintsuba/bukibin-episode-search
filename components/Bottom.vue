@@ -42,6 +42,14 @@
       >
         Kintsuba
       </b-button>
+      <p class="has-text-centered mt-5">
+        <small
+          >Source:
+          <a href="https://github.com/kintsuba/bukibin-episode-search"
+            >https://github.com/kintsuba/bukibin-episode-search</a
+          >
+        </small>
+      </p>
     </div>
   </footer>
 </template>
@@ -49,7 +57,7 @@
 <style scoped></style>
 
 <script lang="ts">
-import { Component, Vue } from "nuxt-property-decorator";
+import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component({})
 export default class Bottom extends Vue {}

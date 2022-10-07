@@ -51,6 +51,18 @@
                 <p id="character" class="is-size-5 has-text-right">
                   （{{ appearQuotes[0].character }}）
                 </p>
+                <div
+                  class="is-flex is-justify-content-center is-align-items-center"
+                  v-if="appearQuotes[0].twitterId"
+                >
+                  <ShareNetwork
+                    network="twitter"
+                    :url="`https://twitter.com/70_pocky/status/${appearQuotes[0].twitterId}`"
+                    :title="`${appearQuotes[0].quote} （第${appearQuotes[0].episode}回 ${appearQuotes[0].character}）\n投稿元: https://bukibin-search.com${$route.fullPath}`"
+                  >
+                    Tweet
+                  </ShareNetwork>
+                </div>
               </div>
               <b-collapse
                 :open.sync="isOpenRelated"

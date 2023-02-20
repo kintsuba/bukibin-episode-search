@@ -7,7 +7,7 @@
     "@nuxtjs/axios": "^5.6.0",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.2.2",
     "nuxt-buefy": "^0.4.24",
     "nuxt-property-decorator": "^2.3.0",
     "ts-node": "^10.9.1",

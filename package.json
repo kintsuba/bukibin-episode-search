@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.7",
-    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxt/typescript-build": "^3.0.1",
     "@nuxtjs/sitemap": "^2.4.0",
     "@types/node": "^18.11.18",
     "@types/webpack-env": "1.18.0",
